@@ -1,0 +1,48 @@
+{
+  "name": "@vitrion/mijn-host-mcp",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "mijn.host MCP server — official API v2",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mijn-host-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "mijn-host",
+    "mijn.host",
+    "domains",
+    "dns",
+    "registrar"
+  ],
+  "author": "vitrion",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitrionbv/mijn-host-mcp.git"
+  }
+}
