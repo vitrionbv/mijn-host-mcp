@@ -1,0 +1,73 @@
+{
+  "name": "@vitrion/mijn-host-mcp",
+  "version": "1.0.0",
+  "description": "Official-style MCP server for the mijn.host API v2 — domains, DNS, contacts, VPS, certificates, account, and affiliate tools for Cursor, Claude, and VS Code.",
+  "mcpName": "nl.vitrion/mijn-host-mcp",
+  "license": "MIT",
+  "author": "Vitrion B.V. <info@vitrion.nl>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitrionbv/mijn-host-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitrionbv/mijn-host-mcp/issues"
+  },
+  "homepage": "https://github.com/vitrionbv/mijn-host-mcp#readme",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "mcp-server",
+    "mijn.host",
+    "mijnhost",
+    "dns",
+    "domains",
+    "vps",
+    "cursor",
+    "claude",
+    "claude-desktop",
+    "vscode"
+  ],
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-server-mijn-host": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "AGENTS.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/chmod-bin.mjs",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "mijn-host": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "src/index.ts"],
+      "env": {
+        "MIJN_HOST_API_KEY": "${env:MIJN_HOST_API_KEY}"
+      }
+    }
+  }
+}
