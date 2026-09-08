@@ -1,17 +1,20 @@
 # mijn-host-mcp
 
 [![npm version](https://img.shields.io/npm/v/@vitrion/mijn-host-mcp.svg)](https://www.npmjs.com/package/@vitrion/mijn-host-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/@vitrion/mijn-host-mcp.svg)](https://www.npmjs.com/package/@vitrion/mijn-host-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io/)
 
 **mijn.host MCP server** — full [mijn.host API v2](https://mijn.host/api/doc/) coverage for AI assistants via the [Model Context Protocol](https://modelcontextprotocol.io/).
 
+Published as [`@vitrion/mijn-host-mcp`](https://www.npmjs.com/package/@vitrion/mijn-host-mcp).
+
 This server uses the **official API v2 endpoints** (`https://mijn.host/api/v2`). Paths and request bodies are taken from the [published documentation](https://mijn.host/api/doc/doc-343215); they are not invented.
 
 ## Features
 
-- Tools for every released v2 operation: domains, DNS, orders, contacts (handles), nameservers, DNS templates, TLDs, VPS, certificates, affiliate, and account
+- **78 tools** for every released v2 operation: domains, DNS, orders, contacts (handles), nameservers, DNS templates, TLDs, VPS, certificates, affiliate, and account
 - Domain lock, URL forwarder, DNSSEC, and tags via `update-domain`
 - Register / transfer orders with premium-price confirmation
 - Automatic rate-limit retry (429 + `Retry-After`)
@@ -32,6 +35,10 @@ This server uses the **official API v2 endpoints** (`https://mijn.host/api/v2`).
 The client also sends `Accept: application/json`, `Content-Type: application/json`, and `User-Agent: @vitrion/mijn-host-mcp/<version>`. The API key is never written to logs.
 
 ## Install
+
+```bash
+npx -y @vitrion/mijn-host-mcp
+```
 
 ### Cursor
 
@@ -55,7 +62,7 @@ You can also add the server from **Cursor Settings → Tools & MCP**.
 
 ### Claude Desktop
 
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`  
 **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
@@ -140,14 +147,18 @@ npx @modelcontextprotocol/inspector node dist/index.js
 
 ## Publishing
 
-Releases are published to npm with [trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC). The workflow in `.github/workflows/npm-publish.yml` runs on `v*` tags, requests `id-token: write`, and does **not** use `NODE_AUTH_TOKEN`.
+Releases go to [npm](https://www.npmjs.com/package/@vitrion/mijn-host-mcp) with [trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC). Push a `v*` tag to run [`.github/workflows/npm-publish.yml`](.github/workflows/npm-publish.yml). The workflow uses `id-token: write` and does **not** use `NODE_AUTH_TOKEN`.
 
-Before the first tag publish, configure the **`@vitrion` trusted publisher** on [npmjs.com](https://www.npmjs.com/) for this GitHub repository (`vitrionbv/mijn-host-mcp`) and the `npm-publish.yml` workflow.
+The trusted publisher is already configured: GitHub repo `vitrionbv/mijn-host-mcp`, workflow `npm-publish.yml`.
 
 ## License
 
 MIT — see [LICENSE](LICENSE).
 
-## Repository
+## Links
 
-[vitrionbv/mijn-host-mcp](https://github.com/vitrionbv/mijn-host-mcp)
+- [npm: @vitrion/mijn-host-mcp](https://www.npmjs.com/package/@vitrion/mijn-host-mcp)
+- [GitHub: vitrionbv/mijn-host-mcp](https://github.com/vitrionbv/mijn-host-mcp)
+- [Issues](https://github.com/vitrionbv/mijn-host-mcp/issues)
+- [mijn.host API v2 docs](https://mijn.host/api/doc/)
+- [mijn.host control panel](https://mijn.host/cp/)

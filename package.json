@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "mijn.host MCP server — official API v2",
+  "description": "mijn.host MCP server — official API v2 for domains, DNS, VPS, certificates, and account",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -23,10 +23,12 @@
   },
   "keywords": [
     "mcp",
+    "model-context-protocol",
     "mijn-host",
     "mijn.host",
     "domains",
     "dns",
+    "vps",
     "registrar"
   ],
   "author": "vitrion",
@@ -47,5 +49,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitrionbv/mijn-host-mcp.git"
+  },
+  "homepage": "https://github.com/vitrionbv/mijn-host-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/vitrionbv/mijn-host-mcp/issues"
   }
 }
