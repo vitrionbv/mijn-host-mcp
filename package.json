@@ -8,8 +8,11 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "mijn-host-mcp": "./dist/index.js"
+    "mijn-host-mcp": "dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
